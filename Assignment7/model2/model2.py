@@ -2,6 +2,17 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
+
+# Target - to commit to a skeleton. 
+# Intuition behind the model
+    # After trying various architecture, I decided to commit to this architecture. 
+    # Block 1 has 2 convolutional layers (instead of 1 that was in final model in class). Reason being I wanted Block 1 to have sufficient parameters to learn edges and gradients 
+    # Transition block - helps reduce the numbers of parameters and implement squeeze 
+    # Block 2 has 3 convolutional layers (instead of 4 in class final model). 3 layers seem sufficient enough to learn texture and patterns 
+    # Global average pooling - I wanted this to be the part of the skeleton as I wanted to finalise the layers before proceeding. I tried experimenting with more/less and finalised the layers. Added GAP after finalising the layers i.e skeleton/architecture
+
+# Result - train 99.29 test 99.86
+# Analysis - The model is giving a decent accuracy but the number of parameters are high. Need to reduce so that they are under the constraint of 8k
 class Model2(nn.Module):
     def __init__(self):
         super(Model2, self).__init__()
