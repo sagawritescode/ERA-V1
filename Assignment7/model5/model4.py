@@ -10,7 +10,7 @@ import torch.nn.functional as F
 class Model4(nn.Module):
     def __init__(self):
         super(Model4, self).__init__()
-        dropout_value = 0.03
+        dropout_value = 0.05
         # Input Block
         self.convblock1 = nn.Sequential(
             nn.Conv2d(in_channels=1, out_channels=10, kernel_size=(3, 3), padding=0, bias=False),
