@@ -33,15 +33,15 @@ Intuition behind the model:
 
 Model summary
 
-1 > 10 k = 3 p = 0
-10 > 10 k = 3 p = 0
-10 > 16 k = 3 p = 0
-16 > 10 k = 1 p = 0
-10 > 10  k = 3 p = 0
-10 > 16  k = 3 p = 0
-16 > 16 k = 3 p = 0
-GAP (k = 5)
-16 > 10 k = 1 
+1 > 10 k = 3 p = 0 <br />
+10 > 10 k = 3 p = 0 <br />
+10 > 16 k = 3 p = 0 <br />
+16 > 10 k = 1 p = 0 <br />
+10 > 10  k = 3 p = 0 <br />
+10 > 16  k = 3 p = 0 <br />
+16 > 16 k = 3 p = 0 <br />
+GAP (k = 5) <br />
+16 > 10 k = 1  <br />
 
 
 ### Model 4
