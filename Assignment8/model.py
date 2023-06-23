@@ -96,6 +96,8 @@ def getNormalisationLayer(normalisation_method, output_channel, groups=0):
           return nn.GroupNorm(1, output_channel)
 
 
+dropout_value = 0.1
+
 class NormalisationModel(nn.Module):
     def __init__(self, normalisation_method, groups=0):
         super(NormalisationModel, self).__init__()
@@ -206,15 +208,15 @@ class NormalisationModel(nn.Module):
 
 class BatchNormalisationModel(NormalisationModel):
     def __init__(self):
-        super(NormalisationModel, self).__init__("bn")
+        super().__init__("bn")
 
 class GroupNormalisationModel(NormalisationModel):
     def __init__(self, groups):
-        super(NormalisationModel, self).__init__("gn", groups)
+        super().__init__("gn", groups)
 
 class LayerNormalisationModel(NormalisationModel):
-    def __init__(self, groups):
-        super(NormalisationModel, self).__init__("ln")
+    def __init__(self):
+        super().__init__("ln")
     
             
         
