@@ -207,5 +207,14 @@ class NormalisationModel(nn.Module):
 class BatchNormalisationModel(NormalisationModel):
     def __init__(self):
         super(NormalisationModel, self).__init__("bn")
+
+class GroupNormalisationModel(NormalisationModel):
+    def __init__(self, groups):
+        super(NormalisationModel, self).__init__("gn", groups)
+
+class LayerNormalisationModel(NormalisationModel):
+    def __init__(self, groups):
+        super(NormalisationModel, self).__init__("ln")
+    
             
         
