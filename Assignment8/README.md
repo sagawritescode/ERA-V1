@@ -11,13 +11,35 @@ After training we display misclassified images and plot the accuracies and losse
 
 ## Comparing the models and learnings
 
+(Note: Left label is predicted by model and right label is the correct label) </br>
+
+All models were trained on 15 epochs. The number of parameters was 39,056.  
+Below are the findings:
+
 ### Model 1 - Group Normalisation Model 
 
 
 ### Model 2 - Layer Normalisation Model 
 
+***Training Accuracy*** - 73.49% </br>
+***Testing Accuracy*** - 72.14%
+
+
+#### Misclassfied Images:
+
+<img width="461" alt="Screenshot 2023-06-24 at 3 22 17 AM" src="https://github.com/sagawritescode/ERA-V1/assets/45040561/28d8b757-fb23-4928-a717-739c6b38ba3d">
+
+### Plots:
+<img width="461" alt="Screenshot 2023-06-24 at 3 22 17 AM" src="https://github.com/sagawritescode/ERA-V1/assets/45040561/be8afce2-7f51-418d-b61f-e711f95143a2">
+
+
+
 
 ### Model 3 - Batch Normalisation Model 
+
+
+***Training Accuracy*** - 75% </br>
+***Testing Accuracy*** - 74.74%
 
 
 #### Misclassfied Images:
