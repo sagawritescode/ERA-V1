@@ -13,13 +13,29 @@ After training we display misclassified images and plot the accuracies and losse
 
 (Note: Left label is predicted by model and right label is the correct label) </br>
 
-All models were trained on 15 epochs. The number of parameters was 39,056.  
+All models were trained on 15 epochs. The number of parameters was 39,056. 
 Below are the findings:
 
 ### Model 1 - Group Normalisation Model 
 
+***Training Accuracy*** - 75.40%  </br>
+***Testing Accuracy*** - 74.17%
+
+I tried with different number of groups 4,8,16. As I increased the number of groups the accuracy kept improving slightly. The numbers and graphs I have submitted are of 16. The reason in increase of accuracy is the increase in the capacity and also scope for the model to adapt specifically to channels. More number of groups are better than 1 group (layer norm, results listed below) and it is comparable with the output of batchnorm, but training time can be more compared to batchnorm
+
+
+#### Misclassfied Images:
+<img width="463" alt="Screenshot 2023-06-24 at 3 41 41 AM" src="https://github.com/sagawritescode/ERA-V1/assets/45040561/3d5ee423-456d-43d4-a292-3190377025a1">
+
+#### Misclassfied Images:
+<img width="711" alt="Screenshot 2023-06-24 at 3 41 45 AM" src="https://github.com/sagawritescode/ERA-V1/assets/45040561/f59328cc-49bd-49f6-8ea9-86b1addbc5c7">
+
+
+
 
 ### Model 2 - Layer Normalisation Model 
+
+Layer norm is the worst of all (comparatively) as it just classifies the channels in 1 group and normalises it. Higher number of groups marginally perform better than layer norm
 
 ***Training Accuracy*** - 73.49% </br>
 ***Testing Accuracy*** - 72.14%
@@ -29,13 +45,16 @@ Below are the findings:
 
 <img width="461" alt="Screenshot 2023-06-24 at 3 22 17 AM" src="https://github.com/sagawritescode/ERA-V1/assets/45040561/28d8b757-fb23-4928-a717-739c6b38ba3d">
 
-### Plots:
-<img width="461" alt="Screenshot 2023-06-24 at 3 22 17 AM" src="https://github.com/sagawritescode/ERA-V1/assets/45040561/be8afce2-7f51-418d-b61f-e711f95143a2">
+#### Misclassfied Images:
+<img width="717" alt="Screenshot 2023-06-24 at 3 25 13 AM" src="https://github.com/sagawritescode/ERA-V1/assets/45040561/a8b6859e-3742-4f44-844a-7fe3ed708a07">
+
 
 
 
 
 ### Model 3 - Batch Normalisation Model 
+
+Batch normalisation is the best of all in terms of accuracy
 
 
 ***Training Accuracy*** - 75% </br>
@@ -51,3 +70,6 @@ Below are the findings:
 <img width="715" alt="Screenshot 2023-06-24 at 3 04 28 AM" src="https://github.com/sagawritescode/ERA-V1/assets/45040561/d1846c1f-840b-43d1-bc0c-88946e40aae0">
 
 
+### Scope for experimentation
+
+There was not much difference in accuracy due to which significant differences between all 3 approaches couldnt be pointed out. Reducing the number of parameters might have helped to figure out the nuances that might have been visible in the training of the model 
