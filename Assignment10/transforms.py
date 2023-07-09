@@ -6,7 +6,7 @@ class CustomResnetTransforms:
         return A.Compose(
             [
                 A.Normalize(mean=means, std=stds),
-                A.PadIfNeeded(min_height=40, max_height=40, always_apply=True),
+                A.PadIfNeeded(min_height=40, min_width=40, always_apply=True),
                 A.RandomCrop(height=32, width=32, always_apply=True),
                 A.HorizontalFlip(),
                 A.CoarseDropout(max_holes=1, max_height=8, max_width=8, min_holes=1, min_height=8, min_width=8, fill_value=means),
